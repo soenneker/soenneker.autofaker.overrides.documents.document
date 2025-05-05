@@ -1,4 +1,4 @@
-# Contributing to Soenneker.AutoFaker.Overrides.Documents.Document
+﻿# Contributing to Soenneker.AutoFaker.Overrides.Documents.Document
 
 We're excited that you're interested in contributing!
 
