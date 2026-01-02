@@ -22,7 +22,7 @@ public class DocumentOverride : AutoFakerOverride<Soenneker.Documents.Document.D
         target.DocumentId = context.Faker.Random.Guid().ToString();
         target.PartitionKey = target.DocumentId;
 
-        DateTime utcNow = DateTime.UtcNow;
+        DateTimeOffset utcNow = DateTimeOffset.UtcNow;
         target.CreatedAt = utcNow;
         target.ModifiedAt = utcNow;
     }
