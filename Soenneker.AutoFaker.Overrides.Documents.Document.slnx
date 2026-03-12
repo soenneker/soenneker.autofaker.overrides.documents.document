@@ -4,10 +4,11 @@
   </Folder>
   <Folder Name="/.github/workflows/">
     <File Path=".github/workflows/build-and-test.yml" />
+    <File Path=".github/workflows/codeql.yml" />
     <File Path=".github/workflows/publish-package.yml" />
   </Folder>
   <Folder Name="/src/">
-    <Project Path="src/Soenneker.AutoFaker.Overrides.Documents.Document.csproj" />
+    <Project Path="src/Soenneker.AutoFaker.Overrides.Documents.Document/Soenneker.AutoFaker.Overrides.Documents.Document.csproj" />
   </Folder>
   <Folder Name="/test/">
     <Project Path="test/Soenneker.AutoFaker.Overrides.Documents.Document.Tests/Soenneker.AutoFaker.Overrides.Documents.Document.Tests.csproj" />
