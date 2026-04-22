@@ -1,16 +1,15 @@
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.AutoFaker.Overrides.Documents.Document.Tests;
 
-[Collection("Collection")]
-public class DocumentOverrideTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public class DocumentOverrideTests : HostedUnitTest
 {
-    public DocumentOverrideTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public DocumentOverrideTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
