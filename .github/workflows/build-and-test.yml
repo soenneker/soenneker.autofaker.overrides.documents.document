@@ -38,7 +38,7 @@ jobs:
         run: dotnet build test/Soenneker.AutoFaker.Overrides.Documents.Document.Tests/Soenneker.AutoFaker.Overrides.Documents.Document.Tests.csproj --configuration Release --no-restore --verbosity minimal
 
       - name: Test
-        run: dotnet test test/Soenneker.AutoFaker.Overrides.Documents.Document.Tests/Soenneker.AutoFaker.Overrides.Documents.Document.Tests.csproj --configuration Release --no-build --no-restore --verbosity minimal
+        run: dotnet test --project test/Soenneker.AutoFaker.Overrides.Documents.Document.Tests/Soenneker.AutoFaker.Overrides.Documents.Document.Tests.csproj --configuration Release --no-build --no-restore --verbosity minimal
 
       - name: Pack
         run: dotnet pack src/Soenneker.AutoFaker.Overrides.Documents.Document/Soenneker.AutoFaker.Overrides.Documents.Document.csproj --configuration Release --no-build --no-restore --output . --verbosity minimal
