@@ -16,7 +16,7 @@ public class DocumentOverride : AutoFakerOverride<Soenneker.Documents.Document.D
     /// <returns>A value indicating whether the operation succeeded.</returns>
     public override bool CanOverride(AutoFakerContext context)
     {
-        return context.GenerateType.IsSubclassOf(typeof(Soenneker.Documents.Document.Document));
+        return typeof(Soenneker.Documents.Document.Document).IsAssignableFrom(context.GenerateType);
     }
 
     /// <summary>

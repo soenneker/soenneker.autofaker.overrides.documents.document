@@ -5,20 +5,30 @@
 
 # Soenneker.AutoFaker.Overrides.Documents.Document
 
-An AutoFaker (AutoBogus) override for the base Document object.
+An AutoFaker override that gives `Document` models internally consistent identifiers and timestamps.
 
-## Install
+## Installation
 
 ```bash
 dotnet add package Soenneker.AutoFaker.Overrides.Documents.Document
 ```
 
-## What you get
+## Usage
 
-- `DocumentOverride` — An AutoFaker (AutoBogus) override for the base Document object.
+```csharp
+using Soenneker.AutoFaker.Overrides.Documents.Document;
+using Soenneker.Utils.AutoBogus;
 
-## API at a glance
+var autoFaker = new AutoFaker();
+autoFaker.Config.Overrides = [new DocumentOverride()];
 
-| API | What it does | Result / important behavior |
-| --- | --- | --- |
-| `DocumentOverride.CanOverride(context)` | Executes the can override operation. | A value indicating whether the operation succeeded. |
+OrderDocument document = autoFaker.Generate<OrderDocument>();
+```
+
+The override applies to `Document` and derived types. It sets:
+
+- `DocumentId` to a GUID string.
+- `PartitionKey` to the same value as `DocumentId`.
+- `CreatedAt` and `ModifiedAt` to the same current UTC timestamp.
+
+When combining this with a more specific override, put the specific override later in `Config.Overrides` if it should replace any of these values.
